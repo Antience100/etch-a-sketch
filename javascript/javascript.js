@@ -5,6 +5,7 @@ function buildGrid() {
         const gridItem = document.createElement("div");
         gridItem.classList.add("grid-item");
         gridContainer.appendChild(gridItem);
+        gridItem.addEventListener("mouseover", (event) => {gridItem.style.backgroundColor="gray";});
     }
 }
 
