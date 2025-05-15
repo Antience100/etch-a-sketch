@@ -33,9 +33,10 @@ function buildGrid(gridMaxSize) {
     gridItem.classList.add("grid-item");
     gridItem.style.width = `${gridItemSize}px`;
     gridItem.style.height = `${gridItemSize}px`;
+    gridItem.style.backgroundColor = "white";
     gridContainer.appendChild(gridItem);
     gridItem.addEventListener("mouseover", () => {
-      gridItem.style.backgroundColor = "gray";
+        gridItem.style.backgroundColor = randomizeGridColor();
     });
   }
 }
@@ -52,5 +53,12 @@ function clearGrid() {
     gridItemToClear.style.backgroundColor = "white";
   });
 }
+
+function randomizeGridColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+};
 
 buildGrid(playerSizeChoice);
